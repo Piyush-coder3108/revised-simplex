@@ -9,6 +9,10 @@ app.use('/',express.static('static'))
 app.use(express.urlencoded({ extended: true }));
 const PORT = 3001
 
+app.get('/',(req,res)=>{
+    res.status(200).send('index');
+});
+
 app.post('/calc', (req, res) => {
     console.log(req.body)
     const {totalvar, totalcons, objZ, matrix, countgreat, type} = req.body;
